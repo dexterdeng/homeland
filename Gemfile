@@ -96,6 +96,12 @@ gem "bootsnap"
 gem "puma_worker_killer"
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-sidekiq', require: false
+  gem 'capistrano3-puma'
+
   gem "byebug"
   gem "derailed_benchmarks"
   gem "letter_opener"
