@@ -21,7 +21,7 @@ class TopicReferenceJob < AsyncJob
 
     Topic.transaction do
       exist_ids.each do |target_id|
-        Topic.create_action(:reference, target_type: "Topic", target_id:, user_type: "Topic", user_id: referer_id)
+        Topic.create_action(:reference, target_type: "Topic", target_id: target_id, user_type: "Topic", user_id: referer_id)
       end
 
       # Touch targets and referer

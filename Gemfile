@@ -14,7 +14,6 @@ gem "uglifier"
 
 gem "view_component", "~> 2.83"
 
-gem "pg"
 
 gem "cancancan"
 gem "devise"
@@ -47,7 +46,7 @@ gem "mini_magick", require: false
 
 # Captcha
 gem "recaptcha"
-gem "rucaptcha"
+# gem "rucaptcha", '3.2.0'
 
 # Notification
 gem "notifications"
@@ -71,9 +70,9 @@ gem "second_level_cache"
 gem "rails-settings-cached"
 
 # HTML Pipeline
-gem "autocorrect-rb"
+# gem "autocorrect-rb",  "2.11.1", git: 'https://github.com/dexterdeng/autocorrect.git'
 gem "html-pipeline", "~> 2.14"
-gem "html-pipeline-auto-correct"
+# gem "html-pipeline-auto-correct"
 gem "redcarpet"
 gem "rouge"
 
@@ -117,3 +116,6 @@ group :development, :test do
 
   gem "standard"
 end
+
+
+gem "pg", "~> 1.5"

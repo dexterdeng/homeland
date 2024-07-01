@@ -5,9 +5,9 @@ class Users::PasswordsController < Devise::PasswordsController
 
   def create
     self.resource = resource_class.new(resource_params.permit(:email))
-    unless verify_complex_captcha?(resource)
-      return render "devise/passwords/new"
-    end
+    # unless verify_complex_captcha?(resource)
+    #  return render "devise/passwords/new"
+    # end
 
     self.resource = resource_class.find_or_initialize_with_errors(Devise.reset_password_keys, resource_params, :not_found)
     if resource.persisted?

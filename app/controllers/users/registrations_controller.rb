@@ -17,12 +17,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     build_resource(sign_up_params)
 
-    unless verify_complex_captcha?(resource)
-      Rails.cache.write(cache_key, sign_up_count + 1)
-      clean_up_passwords resource
-      respond_with resource
-      return
-    end
+    # unless verify_complex_captcha?(resource)
+    #   Rails.cache.write(cache_key, sign_up_count + 1)
+    #   clean_up_passwords resource
+    #   respond_with resource
+    #   return
+    # end
 
     resource.save
     yield resource if block_given?
