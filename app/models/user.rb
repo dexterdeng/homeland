@@ -65,11 +65,11 @@ class User < ApplicationRecord
   end
 
   def self.find_by_email(email)
-    fetch_by_uniq_keys(email:)
+    fetch_by_uniq_keys(email: email)
   end
 
   def self.find_by_login!(slug)
-    find_by_login(slug) || raise(ActiveRecord::RecordNotFound.new(slug:))
+    find_by_login(slug) || raise(ActiveRecord::RecordNotFound.new(slug: slug))
   end
 
   def self.find_by_login(slug)
