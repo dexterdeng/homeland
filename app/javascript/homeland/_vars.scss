@@ -1,5 +1,5 @@
 $red: #eb5424;
-$blue: #225eda;
+$blue: #1e80ff;
 $green: #19a302;
 $yellow: #dbc12d;
 
@@ -17,7 +17,8 @@ $yellow: #dbc12d;
   --red-light: #fdf1ed;
   --yellow: #dbc12d;
   --yellow-light: #fffdee;
-  --blue: #225eda;
+  --blue: #1e80ff;
+  --blue-dark: #1171ee;
   --blue-light: #e6f0fb;
   --green: #19a302;
   --green-light: #f4fff2;
@@ -28,7 +29,7 @@ $yellow: #dbc12d;
   --filter-active-color: #202020;
 
   // speical vars
-  --btn-border-radius: 0.375rem;
+  --btn-border-radius: 3px;
   --btn-box-shaodw: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --btn-secondary-text-color: rgba(55, 65, 81, 1);
   --btn-secondary-background-color: #fff;

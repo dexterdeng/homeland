@@ -329,6 +329,7 @@ body {
   box-shadow: var(--btn-box-shaodw);
   border-radius: var(--btn-border-radius);
 
+
   &:focus {
     box-shadow: none;
   }
@@ -339,6 +340,29 @@ body {
     transition-timing-function: ease-out;
   }
 }
+
+
+.btn-default {
+  border-color: rgba(30,128,255,.3);
+  background: rgba(30,128,255,.05);
+  color: #1e80ff;
+
+  &:hover {
+    background-color: rgb(30, 128, 255, 0.1);
+    border: 1px solid rgb(30, 128, 255, 0.45);
+    color: #1e80ff;
+  }
+  &:active,
+  &.active,
+  &.btn.active,
+  &.btn:active{
+    color: #1e80ff;
+    border-color: rgba(30,128,255,.6);
+    background: rgba(30,128,255,.2);
+  }
+}
+
+
 
 .btn-secondary {
   border-color: var(--btn-secondary-border-color);
@@ -410,6 +434,17 @@ body {
   }
   .btn-primary {
     min-width: 150px;
+  }
+}
+
+.btn.btn-primary{
+  color: white;
+  &:hover{
+    color: white;
+    background: var(--blue-dark);
+  }
+  &:active{
+    color: white;
   }
 }
 
@@ -668,6 +703,7 @@ kbd {
   @apply bg-white;
   @apply dark:bg-gray-900 dark:border dark:border-solid dark:border-gray-800;
 
+  border-radius: 4px;
   .card {
     border: 1px solid var(--card-inset-border-color);
   }
@@ -869,28 +905,28 @@ kbd {
 .avatar {
   .uface,
   .media-object {
-    border-radius: 120px;
+    border-radius: 3px;
   }
 }
 .avatar-16 {
   width: 16px;
   height: 16px;
-  border-radius: 120px;
+  border-radius: 3px;
 }
 .avatar-32 {
   width: 32px;
   height: 32px;
-  border-radius: 120px;
+  border-radius: 3px;
 }
 .avatar-48 {
   width: 40px;
   height: 40px;
-  border-radius: 120px;
+  border-radius: 3px;
 }
 .avatar-96 {
   width: 96px;
   height: 96px;
-  border-radius: 120px;
+  border-radius: 3px;
 }
 @media (max-width: 480px) {
   .avatar-48 {
