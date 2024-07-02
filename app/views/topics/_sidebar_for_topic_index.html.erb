@@ -6,8 +6,7 @@
   </div>
 </div>
 <% else %>
-
-<div class="mb-4 card">
+<div class="mb-4 card block md:hidden">
   <div class="card-body">
     <%= link_to t('topics.new_topic'), main_app.new_topic_path(node: @node&.id), class: 'btn btn-primary btn-block' %>
   </div>
@@ -29,7 +28,7 @@
       <div class="flex flex-col gap-1 text-center">
         <%= user_avatar_tag(user, :md) %>
         <%= user_name_tag(user, class: "text-sm text-gray-600 truncate") %>
-      </div> 
+      </div>
     <% end %>
   </div>
 </div>
@@ -38,6 +37,7 @@
 <% cache(["sidebar_statistics",Time.now.strftime("%Y-%m-%d %H")]) do %>
 <div class="mb-4 card">
   <div class="card-header"><%= t("common.statics")%></div>
+  <div class='divider'><div></div></div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><%= t("common.statics_users_count", count: User.unscoped.count) %></li>
     <li class="list-group-item"><%= t("common.statics_topics_count", count: Topic.unscoped.count) %></li>

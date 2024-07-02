@@ -1,3 +1,24 @@
+
+<div class="hidden md:block">
+  <div class="btn-group  ">
+    <%= link_to t('topics.new_topic'), main_app.new_topic_path(node: @node&.id), class: 'btn btn-primary btn-block block' %>
+
+    <div class="btn btn-primary dropdown" style="border-left: 1px solid rgba(255,255,255,0.1); padding: 0px;">
+      <a class='block' href="javascript:void()" role="button" data-bs-toggle ="dropdown" aria-haspopup="true" aria-expanded="false" style="padding: 6px 5px;">
+        <i class="fa fa-caret-down" style="color: white"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbar-new-menu" >
+          <%= link_to t("topics.new_topic"), main_app.new_topic_path, class: "dropdown-item" %>
+          <% if can?(:create, Team) && Setting.has_module?(:team) %>
+            <div class="dropdown-divider"></div>
+            <%= link_to t("teams.new_team"), main_app.new_team_path, class: "dropdown-item" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <ul class="nav navbar-nav user-bar">
   <% if current_user %>
     <%
@@ -7,8 +28,8 @@
     <li class="nav-item notification-count">
       <a href="<%= main_app.notifications_path %>" class="nav-link <%= badge_class %>" title="<%= t("common.notifications") %>"><i class="fa fa-bell"></i><span class="count"><%= unread_notify_count %></span></a>
     </li>
-    <li class="nav-item dropdown">
-      <a href="#" id="navbar-new-menu" class="nav-link dropdown-toggle" role="button" data-bs-toggle ="dropdown" aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item dropdown block md:!hidden">
+      <a href="#" id="navbar-new-menu" class="nav-link" role="button" data-bs-toggle ="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-plus"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbar-new-menu">
@@ -22,7 +43,7 @@
   <% end %>
   <% if current_user %>
     <li class="nav-item dropdown dropdown-avatar">
-      <a href="#" class="dropdown-toggle nav-link" id="navbar-user-menu" data-bs-toggle ="dropdown" role="button" aria-expanded="false">
+      <a href="#" class=" nav-link" id="navbar-user-menu" data-bs-toggle ="dropdown" role="button" aria-expanded="false">
         <%= user_avatar_tag(current_user, :sm, link: false) %>
       </a>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbar-user-menu">
