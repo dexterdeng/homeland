@@ -25,9 +25,10 @@ require 'capistrano/rails/migrations'
 require 'capistrano/sidekiq'
 
 require 'capistrano/puma'
-install_plugin Capistrano::Puma
+install_plugin Capistrano::Puma  # Default puma tasks
 install_plugin Capistrano::Puma::Systemd
 install_plugin Capistrano::Puma::Nginx
+
 
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined

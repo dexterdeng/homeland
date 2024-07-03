@@ -100,7 +100,8 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano-sidekiq', require: false
-  gem 'capistrano3-puma'
+  #gem 'capistrano3-puma'
+  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
 
   gem "byebug"
   gem "derailed_benchmarks"
