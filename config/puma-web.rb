@@ -1,42 +1,25 @@
 # frozen_string_literal: true
+#!/usr/bin/env puma
 
-# Puma can serve each request in a thread from an internal thread pool.
-# The `threads` method setting takes two numbers: a minimum and maximum.
-# Any libraries that use thread pools should be configured to match
-# the maximum value specified for Puma. Default is set to 5 threads for minimum
-# and maximum; this matches the default thread size of Active Record.
-#
-threads_count = ENV.fetch("RAILS_MAX_THREADS", 5)
-#threads threads_count, threads_count
+directory = '/home/diancang/rails/zhuimeng/current'
+rackup "/home/diancang/rails/rixinlu/current/config.ru"
+environment 'production'
 
-daemonize true
-port 7000
-workers 4
+tag ''
+
+pidfile "#{directory}/tmp/pids/puma.pid"
+state_path "#{directory}/tmp/pids/puma.state"
+stdout_redirect "#{directory}/log/puma_access.log", "#{directory}/log/puma_error.log", true
+
 threads 8, 16
 
+bind "unix://#{directory}/tmp/sockets/puma.sock"
 
-# Specifies the `port` that Puma will listen on to receive requests; default is 3000.
-#
-port ENV.fetch("PORT", 3000)
+workers 4
 
-# Specifies the `environment` that Puma will run in.
-#
-environment ENV.fetch("RAILS_ENV", "development")
+prune_bundler
 
-# Specifies the number of `workers` to boot in clustered mode.
-# Workers are forked webserver processes. If using threads and workers together
-# the concurrency of the application would be max `threads` * `workers`.
-# Workers do not work on JRuby or Windows (both of which do not support
-# processes).
-#
-workers ENV.fetch("WEB_CONCURRENCY", 2) unless Rails.env.development?
 
-# Use the `preload_app!` method when specifying a `workers` number.
-# This directive tells Puma to first boot the application and load code
-# before forking the application. This takes advantage of Copy On Write
-# process behavior so workers use less memory.
-#
-preload_app!
-
-# Allow puma to be restarted by `rails restart` command.
-plugin :tmp_restart
+on_restart do
+  ENV["BUNDLE_GEMFILE"] = ""
+end
