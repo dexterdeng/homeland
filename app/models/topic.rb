@@ -12,7 +12,7 @@ class Topic < ApplicationRecord
   include Topic::RateLimit
   include Topic::Notify
   include Topic::Search
-  # include Topic::AutoCorrect
+  include Topic::AutoCorrect
   include Topic::Actions
 
   attr_accessor :read_state

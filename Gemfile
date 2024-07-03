@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-source "https://mirrors.aliyun.com/rubygems/"
+source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
@@ -14,6 +14,7 @@ gem "uglifier"
 
 gem "view_component", "~> 2.83"
 
+gem "pg"
 
 gem "cancancan"
 gem "devise"
@@ -46,7 +47,7 @@ gem "mini_magick", require: false
 
 # Captcha
 gem "recaptcha"
-# gem "rucaptcha", '3.2.0'
+gem "rucaptcha"
 
 # Notification
 gem "notifications"
@@ -70,9 +71,9 @@ gem "second_level_cache"
 gem "rails-settings-cached"
 
 # HTML Pipeline
-# gem "autocorrect-rb",  "2.11.1", git: 'https://github.com/dexterdeng/autocorrect.git'
+gem "autocorrect-rb"
 gem "html-pipeline", "~> 2.14"
-# gem "html-pipeline-auto-correct"
+gem "html-pipeline-auto-correct"
 gem "redcarpet"
 gem "rouge"
 
@@ -116,6 +117,3 @@ group :development, :test do
 
   gem "standard"
 end
-
-
-gem "pg", "~> 1.5"
