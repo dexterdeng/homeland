@@ -27,7 +27,6 @@ require 'capistrano/sidekiq'
 require 'capistrano/puma'
 install_plugin Capistrano::Puma  # Default puma tasks
 install_plugin Capistrano::Puma::Systemd
-install_plugin Capistrano::Puma::Nginx
 
 
 
