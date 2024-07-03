@@ -18,3 +18,7 @@ end
 before_fork do
   ActiveRecord::Base.connection_pool.disconnect!
 end
+
+# Allow puma to be restarted by `rails restart` command.
+plugin :tmp_restart
+
